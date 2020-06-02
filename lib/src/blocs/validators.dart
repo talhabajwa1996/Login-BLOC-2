@@ -14,7 +14,7 @@ class Validator{
 
   final passwordValidator = StreamTransformer<String, String>.fromHandlers(
     handleData: (password, sink){
-      if(password.length < 4){
+      if(password.length > 4){
         sink.add(password);
       }
       else{
