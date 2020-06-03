@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import '../blocs/bloc.dart';
 
 class LoginScreen extends StatelessWidget {
-  Widget build(context) {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
           email(),
           SizedBox(height: 8.0),
           password(),
@@ -27,8 +28,7 @@ class LoginScreen extends StatelessWidget {
           onChanged: bloc.changeEmail,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            labelText: 'Email',
-            hintText: 'example@example.com',
+            hintText: ('Email'),
             errorText: snapshot.error,
           ),
         );
@@ -44,8 +44,7 @@ class LoginScreen extends StatelessWidget {
           onChanged: bloc.changePassword,
           obscureText: true,
           decoration: InputDecoration(
-            labelText: 'Password',
-            hintText: 'Password',
+            hintText: ('Password'),
             errorText: snapshot.error,
           ),
         );
@@ -55,9 +54,9 @@ class LoginScreen extends StatelessWidget {
 
   Widget submitButton() {
     return RaisedButton(
-      child: Text('Submit'),
-      color: Colors.blue,
       onPressed: () {},
+      child: Text('Submit'),
+      color: Colors.lightBlue,
     );
   }
 }
